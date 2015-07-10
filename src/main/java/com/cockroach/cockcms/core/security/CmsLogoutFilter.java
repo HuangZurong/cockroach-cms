@@ -12,6 +12,7 @@ import org.apache.shiro.web.filter.authc.LogoutFilter;
  * CmsUserFilter
  */
 public class CmsLogoutFilter extends LogoutFilter {
+
     /**
      * 返回URL
      */
@@ -29,7 +30,6 @@ public class CmsLogoutFilter extends LogoutFilter {
         }
         return redirectUrl;
     }
-
 
     private String adminPrefix;
     private String adminLogin;
@@ -49,6 +49,5 @@ public class CmsLogoutFilter extends LogoutFilter {
     public void setAdminLogin(String adminLogin) {
         this.adminLogin = adminLogin;
     }
-
 
 }

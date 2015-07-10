@@ -1,6 +1,5 @@
 package com.cockroach.cockcms.core.security;
 
-
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.Cookie;

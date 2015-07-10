@@ -19,8 +19,7 @@ import org.springframework.core.io.Resource;
 /**
  * 用于Web的EhCacheManagerFactoryBean。可以基于Web根目录指定diskStore地址。
  */
-public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>,
-        InitializingBean, DisposableBean {
+public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>, InitializingBean, DisposableBean {
 
     private final Logger log = LoggerFactory.getLogger(WebEhCacheManagerFactoryBean.class);
 
@@ -76,8 +75,7 @@ public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>,
                 try {
                     config.addDiskStore(dc);
                 } catch (ObjectExistsException e) {
-                    log.warn("if you want to config distStore in spring,"
-                            + " please remove diskStore in config file!", e);
+                    log.warn("if you want to config distStore in spring, please remove diskStore in config file!", e);
                 }
             }
         }
@@ -96,8 +94,7 @@ public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>,
     }
 
     public Class<? extends CacheManager> getObjectType() {
-        return (this.cacheManager != null ? this.cacheManager.getClass()
-                : CacheManager.class);
+        return (this.cacheManager != null ? this.cacheManager.getClass() : CacheManager.class);
     }
 
     public boolean isSingleton() {

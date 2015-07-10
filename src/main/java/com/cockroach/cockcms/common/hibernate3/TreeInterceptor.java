@@ -1,7 +1,5 @@
 package com.cockroach.cockcms.common.hibernate3;
 
-import java.io.Serializable;
-
 import org.apache.commons.lang.StringUtils;
 import org.hibernate.EmptyInterceptor;
 import org.hibernate.FlushMode;
@@ -14,11 +12,12 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+import java.io.Serializable;
+
 @SuppressWarnings("serial")
-public class TreeIntercptor extends EmptyInterceptor implements
-		ApplicationContextAware {
-	private static final Logger log = LoggerFactory
-			.getLogger(TreeIntercptor.class);
+public class TreeInterceptor extends EmptyInterceptor implements ApplicationContextAware {
+
+	private static final Logger log = LoggerFactory.getLogger(TreeInterceptor.class);
 	private ApplicationContext appCtx;
 	private SessionFactory sessionFactory;
 	public static final String SESSION_FACTORY = "sessionFactory";
