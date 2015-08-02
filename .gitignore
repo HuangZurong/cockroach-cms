@@ -1,5 +1,7 @@
 
-.idea/.name
+.idea/*
+
+.target/*
 
 *.xml
 
