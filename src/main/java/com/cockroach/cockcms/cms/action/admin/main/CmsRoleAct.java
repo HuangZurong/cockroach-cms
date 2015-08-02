@@ -154,7 +154,7 @@ public class CmsRoleAct {
 		Map<String,String>menuNames=new HashMap<String,String>();
 		Map<String,String>menuUrls=new HashMap<String,String>();
 		Map<String,String>menuPerms=new HashMap<String,String>();
-		Map<String,String>menuChilds=getMenuChilds();
+		Map<String,String>menuChilds= getMenuChildren();
 		Map<String,String[]>menuChildSets=new HashMap<String,String[]>();
 		Set<String>menuPrioritys= new TreeSet<String>(new MyComparator());  
 		menuPrioritys.addAll(menus.keySet());
@@ -258,7 +258,7 @@ public class CmsRoleAct {
 	}
 	
 	private Map<String,String> menus;
-	private Map<String,String> menuChilds;
+	private Map<String,String> menuChildren;
 	
 	
 	public Map<String, String> getMenus() {
@@ -269,12 +269,12 @@ public class CmsRoleAct {
 		this.menus = menus;
 	}
 
-	public Map<String, String> getMenuChilds() {
-		return menuChilds;
+	public Map<String, String> getMenuChildren() {
+		return menuChildren;
 	}
 
-	public void setMenuChilds(Map<String, String> menuChilds) {
-		this.menuChilds = menuChilds;
+	public void setMenuChildren(Map<String, String> menuChildren) {
+		this.menuChildren = menuChildren;
 	}
 	
 	@Autowired

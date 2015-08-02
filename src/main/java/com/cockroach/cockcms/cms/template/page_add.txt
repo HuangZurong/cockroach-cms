@@ -11,7 +11,7 @@ $(function() {
 </script>
 </head>
 <body>
-<div class="box-positon">
+<div class="box-position">
 	<div class="rpos"><@s.m "global.position"/>: <@s.m "#{entity}.function"/> - <@s.m "global.add"/></div>
 	<form class="ropt">
 		<input class="return-button" type="submit" value="<@s.m "global.backToList"/>" onclick="this.form.action='v_list.do';"/>

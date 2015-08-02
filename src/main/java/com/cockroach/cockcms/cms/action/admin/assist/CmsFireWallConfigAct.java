@@ -52,7 +52,7 @@ public class CmsFireWallConfigAct {
 	@RequestMapping("/config/o_login.do")
 	public String o_login(String password,HttpServletRequest request,HttpServletResponse response,Model model)
 			throws IOException {
-		InputStream in = new FileInputStream(realPathResolver.get(Constants.FIREWALL_CONFIGPATH));
+		InputStream in = new FileInputStream(realPathResolver.get(Constants.FIREWALL_CONFIG_PATH));
 		Properties p = new Properties();
 		p.load(in);
 		String pass = p.getProperty(property_firewall_password);
@@ -70,7 +70,7 @@ public class CmsFireWallConfigAct {
 			throws IOException {
 		Boolean is_login=(Boolean) session.getAttribute(request, FIREWALL_LOGIN);
 		if(is_login!=null&&is_login){
-			InputStream in = new FileInputStream(realPathResolver.get(Constants.FIREWALL_CONFIGPATH));
+			InputStream in = new FileInputStream(realPathResolver.get(Constants.FIREWALL_CONFIG_PATH));
 			Properties p = new Properties();
 			p.load(in);
 			String password = p.getProperty(property_firewall_password);
@@ -108,7 +108,7 @@ public class CmsFireWallConfigAct {
 	public String update(HttpServletRequest request, Model model, String open,String oldPassword,
 			String password, String domain, String[] week,String[] hour, String ips)
 			throws IOException {
-		InputStream in = new FileInputStream(realPathResolver.get(Constants.FIREWALL_CONFIGPATH));
+		InputStream in = new FileInputStream(realPathResolver.get(Constants.FIREWALL_CONFIG_PATH));
 		Properties p = new Properties();
 		p.load(in);
 		if(StringUtils.isNotBlank(password)){
@@ -129,7 +129,7 @@ public class CmsFireWallConfigAct {
 			p.setProperty(property_firewall_hour,"");
 		}
 		p.setProperty(property_firewall_ips, ips);
-		OutputStream out = new FileOutputStream(realPathResolver.get(Constants.FIREWALL_CONFIGPATH));
+		OutputStream out = new FileOutputStream(realPathResolver.get(Constants.FIREWALL_CONFIG_PATH));
 		p.store(out, "update firewall config");
 		model.addAttribute("message", "global.success");
 		return edit(request, model);

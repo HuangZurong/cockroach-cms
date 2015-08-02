@@ -8,7 +8,7 @@ import com.cockroach.cockcms.cms.entity.assist.CmsUserMenu;
 public interface CmsUserMenuMng {
 	public Pagination getPage(Integer userId, int pageNo, int pageSize);
 	
-	public List<CmsUserMenu> getList(Integer userId, int cout);
+	public List<CmsUserMenu> getList(Integer userId, int count);
 
 	public CmsUserMenu findById(Integer id);
 

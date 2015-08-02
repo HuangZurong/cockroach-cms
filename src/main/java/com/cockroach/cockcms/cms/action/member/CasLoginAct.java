@@ -13,11 +13,11 @@ import com.cockroach.cockcms.core.web.util.FrontUtils;
 
 @Controller
 public class CasLoginAct {
+
 	public static final String COOKIE_ERROR_REMAINING = "_error_remaining";
 	public static final String LOGIN_INPUT = "tpl.loginInput";
 	public static final String LOGIN_STATUS = "tpl.loginStatus";
 	public static final String TPL_INDEX = "tpl.index";
-
 
 	@RequestMapping(value = "/login.jspx", method = RequestMethod.GET)
 	public String input(HttpServletRequest request, ModelMap model) {

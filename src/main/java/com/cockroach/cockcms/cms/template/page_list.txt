@@ -23,7 +23,7 @@ function doDelete(){
 </script>
 </head>
 <body>
-<div class="box-positon">
+<div class="box-position">
 	<div class="rpos"><@s.m "global.position"/>: <@s.m "#{entity}.function"/> - <@s.m "global.list"/></div>
 	<form class="ropt">
 		<input class="add" type="submit" value="<@s.m "global.add"/>" onclick="this.form.action='v_add.do';"/>
@@ -47,6 +47,6 @@ function doDelete(){
 <div><input class="del-button" type="button" value="<@s.m "global.delete"/>" onclick="optDelete();"/></div>
 </form>
 </div>
-<#include "/common/alert_message.html"/>
+<#include "/common/html/alert_message.html"/>
 </body>
 </html>

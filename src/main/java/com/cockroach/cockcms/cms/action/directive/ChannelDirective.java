@@ -43,11 +43,11 @@ public class ChannelDirective implements TemplateDirectiveModel {
 	/**
 	 * 没有栏目id参数 模板路径
 	 */
-	public static final String TPL_CHANNEL_PARAMREQUIRED = "/WEB-INF/t/cms_sys_defined/channel/ParamsRequiredException.html";
+	public static final String TPL_CHANNEL_PARAMREQUIRED = "/WEB-INF/tmpl/cms_sys_defined/channel/ParamsRequiredException.html";
 	/**
 	 * 没有找到栏目 模板路径
 	 */
-	public static final String TPL_CHANNEL_NOT_FOUND = "/WEB-INF/t/cms_sys_defined/channel/NotFoundChannelException.html";
+	public static final String TPL_CHANNEL_NOT_FOUND = "/WEB-INF/tmpl/cms_sys_defined/channel/NotFoundChannelException.html";
 
 	@SuppressWarnings("unchecked")
 	public void execute(Environment env, Map params, TemplateModel[] loopVars,

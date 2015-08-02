@@ -32,7 +32,7 @@ public class CmsSite extends BaseCmsSite {
 	}
 	
 	/**
-	 * 返回首页默认模板(类似/WEB-INF/t/cms/www/default/index/index.html)
+	 * 返回首页默认模板(类似/WEB-INF/tmpl/cms/www/default/index/index.html)
 	 * @return
 	 */
 	private String getTplIndexDefault() {
@@ -43,7 +43,7 @@ public class CmsSite extends BaseCmsSite {
 	}
 	
 	/**
-	 * 返回完整前缀(类似/WEB-INF/t/cms/www/default/index/index)
+	 * 返回完整前缀(类似/WEB-INF/tmpl/cms/www/default/index/index)
 	 * @param prefix
 	 * @return
 	 */
@@ -138,7 +138,7 @@ public class CmsSite extends BaseCmsSite {
 	}
 
 	/**
-	 * 获得模板路径。如：/WEB-INF/t/cms/www
+	 * 获得模板路径。如：/WEB-INF/tmpl/cms/www
 	 * 
 	 * @return
 	 */
@@ -147,7 +147,7 @@ public class CmsSite extends BaseCmsSite {
 	}
 
 	/**
-	 * 获得模板方案路径。如：/WEB-INF/t/cms/www/default
+	 * 获得模板方案路径。如：/WEB-INF/tmpl/cms/www/default
 	 * 
 	 * @return
 	 */
@@ -156,7 +156,7 @@ public class CmsSite extends BaseCmsSite {
 	}
 
 	/**
-	 * 获得模板资源路径。如：/r/cms/www
+	 * 获得模板资源路径。如：/res/cms/www
 	 * 
 	 * @return
 	 */

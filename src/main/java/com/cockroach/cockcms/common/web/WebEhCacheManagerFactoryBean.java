@@ -1,20 +1,21 @@
 package com.cockroach.cockcms.common.web;
 
-import java.io.IOException;
-
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.ObjectExistsException;
 import net.sf.ehcache.config.Configuration;
 import net.sf.ehcache.config.ConfigurationFactory;
 import net.sf.ehcache.config.DiskStoreConfiguration;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.core.io.Resource;
+import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.core.io.support.ResourcePatternResolver;
+
+import java.io.IOException;
 
 /**
  * 用于Web的EhCacheManagerFactoryBean。可以基于Web根目录指定diskStore地址。
@@ -22,6 +23,8 @@ import org.springframework.core.io.Resource;
 public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>, InitializingBean, DisposableBean {
 
     private final Logger log = LoggerFactory.getLogger(WebEhCacheManagerFactoryBean.class);
+
+    ResourcePatternResolver resourcePatternResolver = new PathMatchingResourcePatternResolver();
 
     private Resource configLocation;
     private Resource diskStoreLocation;
@@ -39,8 +42,8 @@ public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>, 
      * @see CacheManager#create(java.io.InputStream)
      * @see CacheManager#CacheManager(java.io.InputStream)
      */
-    public void setConfigLocation(Resource configLocation) {
-        this.configLocation = configLocation;
+    public void setConfigLocation(String configLocation) {
+        this.configLocation = resourcePatternResolver.getResource(configLocation);
     }
 
     /**
@@ -67,8 +70,7 @@ public class WebEhCacheManagerFactoryBean implements FactoryBean<CacheManager>, 
         log.info("Initializing EHCache CacheManager");
         Configuration config = null;
         if (this.configLocation != null) {
-            config = ConfigurationFactory
-                    .parseConfiguration(this.configLocation.getInputStream());
+            config = ConfigurationFactory.parseConfiguration(this.configLocation.getInputStream());
             if (this.diskStoreLocation != null) {
                 DiskStoreConfiguration dc = new DiskStoreConfiguration();
                 dc.setPath(this.diskStoreLocation.getFile().getAbsolutePath());

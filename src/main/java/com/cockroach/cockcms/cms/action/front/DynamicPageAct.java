@@ -46,7 +46,6 @@ public class DynamicPageAct {
     public static final String GROUP_FORBIDDEN = "login.groupAccessForbidden";
     public static final String CONTENT_STATUS_FORBIDDEN = "content.notChecked";
 
-
     /**
      * TOMCAT的默认路径
      *
@@ -69,18 +68,6 @@ public class DynamicPageAct {
         } else {
             return site.getTplIndexOrDef();
         }
-    }
-
-    /**
-     * WEBLOGIC的默认路径
-     *
-     * @param request
-     * @param model
-     * @return
-     */
-    @RequestMapping(value = "/index.jhtml", method = RequestMethod.GET)
-    public String indexForWeblogic(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
-        return index(request, response, model);
     }
 
     /**
@@ -142,6 +129,18 @@ public class DynamicPageAct {
         FrontUtils.frontData(request, model, site);
         FrontUtils.frontPageData(request, model);
         return channel.getTplChannelOrDef();
+    }
+
+    /**
+     * WEBLOGIC的默认路径
+     *
+     * @param request
+     * @param model
+     * @return
+     */
+    @RequestMapping(value = "/index.jhtml", method = RequestMethod.GET)
+    public String indexForWeblogic(HttpServletRequest request, HttpServletResponse response, ModelMap model) {
+        return index(request, response, model);
     }
 
     public String content(Integer id, int pageNo, String[] params,

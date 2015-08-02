@@ -78,7 +78,6 @@ public class CmsAuthenticationFilter extends FormAuthenticationFilter {
         try {
             Subject subject = getSubject(request, response);
             subject.login(token);
-            ;
             return onLoginSuccess(token, adminLogin, subject, request, response);
         } catch (AuthenticationException e) {
             //e.printStackTrace();
@@ -94,7 +93,7 @@ public class CmsAuthenticationFilter extends FormAuthenticationFilter {
             try {
                 issueSuccessRedirect(request, response);
             } catch (Exception e) {
-                logger.error("", e);
+                logger.error(e.getMessage(), e);
             }
             return false;
         }

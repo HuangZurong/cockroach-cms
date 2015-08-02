@@ -18,45 +18,42 @@ import com.cockroach.cockcms.core.entity.CmsSite;
  * 后台（管理员）本地化信息拦截器
  */
 public class AdminLocaleInterceptor extends HandlerInterceptorAdapter {
-	/**
-	 * 本地化字符串在ModelMap中的名称
-	 */
-	public static final String LOCALE = "locale";
 
-	@Override
-	public boolean preHandle(HttpServletRequest request,
-			HttpServletResponse response, Object handler)
-			throws ServletException {
-		LocaleResolver localeResolver = RequestContextUtils
-				.getLocaleResolver(request);
-		if (localeResolver == null) {
-			throw new IllegalStateException(
-					"No LocaleResolver found: not in a DispatcherServlet request?");
-		}
-	//	CmsSite site = CmsUtils.getSite(request);
-		CmsSite site=CmsThreadVariable.getSite();
-		String newLocale = site.getLocaleAdmin();
-		LocaleEditor localeEditor = new LocaleEditor();
-		localeEditor.setAsText(newLocale);
-		localeResolver.setLocale(request, response, (Locale) localeEditor
-				.getValue());
-		// Proceed in any case.
-		return true;
-	}
+    /**
+     * 本地化字符串在ModelMap中的名称
+     */
+    public static final String LOCALE = "locale";
 
-	@Override
-	public void postHandle(HttpServletRequest request,
-			HttpServletResponse response, Object handler,
-			ModelAndView modelAndView) throws Exception {
-		LocaleResolver localeResolver = RequestContextUtils
-				.getLocaleResolver(request);
-		if (localeResolver == null) {
-			throw new IllegalStateException(
-					"No LocaleResolver found: not in a DispatcherServlet request?");
-		}
-		if (modelAndView != null) {
-			modelAndView.getModelMap().addAttribute(LOCALE,
-					localeResolver.resolveLocale(request).toString());
-		}
-	}
+    @Override
+    public boolean preHandle(HttpServletRequest request,
+                             HttpServletResponse response,
+                             Object handler)
+            throws ServletException {
+        LocaleResolver localeResolver = RequestContextUtils.getLocaleResolver(request);
+        if (localeResolver == null) {
+            throw new IllegalStateException("No LocaleResolver found: not in a DispatcherServlet request?");
+        }
+        //	CmsSite site = CmsUtils.getSite(request);
+        CmsSite site = CmsThreadVariable.getSite();
+        String newLocale = site.getLocaleAdmin();
+        LocaleEditor localeEditor = new LocaleEditor();
+        localeEditor.setAsText(newLocale);
+        localeResolver.setLocale(request, response, (Locale) localeEditor.getValue());
+        // Proceed in any case.
+        return true;
+    }
+
+    @Override
+    public void postHandle(HttpServletRequest request,
+                           HttpServletResponse response,
+                           Object handler,
+                           ModelAndView modelAndView) throws Exception {
+        LocaleResolver localeResolver = RequestContextUtils.getLocaleResolver(request);
+        if (localeResolver == null) {
+            throw new IllegalStateException("No LocaleResolver found: not in a DispatcherServlet request?");
+        }
+        if (modelAndView != null) {
+            modelAndView.getModelMap().addAttribute(LOCALE, localeResolver.resolveLocale(request).toString());
+        }
+    }
 }

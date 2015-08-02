@@ -10,7 +10,7 @@ public class WebCoreErrors extends com.cockroach.cockcms.common.web.springmvc.We
     /**
      * 默认错误页面
      */
-    public static final String ERROR_PAGE = "/common/error_message";
+    public static final String ERROR_PAGE = "/common/html/error_message";
     /**
      * 默认错误信息属性名称
      */
