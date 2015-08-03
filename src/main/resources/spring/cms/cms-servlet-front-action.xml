@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd"
+       default-lazy-init="true">
+
+    <bean id="dynamicAct" class="com.cockroach.cockcms.cms.action.front.DynamicPageAct"/>
+    <bean id="tagAct" class="com.cockroach.cockcms.cms.action.front.TagAct"/>
+    <bean id="topicAct" class="com.cockroach.cockcms.cms.action.front.TopicAct"/>
+    <bean id="searchAct" class="com.cockroach.cockcms.cms.action.front.SearchAct"/>
+    <bean id="voteAct" class="com.cockroach.cockcms.cms.action.front.VoteAct"/>
+    <bean id="friendlinkAct" class="com.cockroach.cockcms.cms.action.front.FriendlinkAct"/>
+
+    <bean id="contentCountAct" class="com.cockroach.cockcms.cms.action.front.ContentCountAct"/>
+    <bean id="attachmentAct" class="com.cockroach.cockcms.cms.action.front.AttachmentAct"/>
+    <bean id="commentAct" class="com.cockroach.cockcms.cms.action.front.CommentAct"/>
+    <bean id="guestbookAct" class="com.cockroach.cockcms.cms.action.front.GuestbookAct"/>
+    <bean id="rssAct" class="com.cockroach.cockcms.cms.action.front.RssAct"/>
+    <bean id="csiCustomAct" class="com.cockroach.cockcms.cms.action.front.CsiCustomAct"/>
+    <bean id="advertisingAct" class="com.cockroach.cockcms.cms.action.front.AdvertisingAct"/>
+
+    <bean id="casLoginAct" class="com.cockroach.cockcms.cms.action.member.CasLoginAct"/>
+    <bean id="loginAct" class="com.cockroach.cockcms.cms.action.member.LoginAct"/>
+    <bean id="memberAct" class="com.cockroach.cockcms.cms.action.member.MemberAct"/>
+    <bean id="contributeAct" class="com.cockroach.cockcms.cms.action.member.ContributeAct"/>
+    <bean id="fckAct" class="com.cockroach.cockcms.cms.action.member.FckAct"/>
+    <bean id="ueditorAct" class="com.cockroach.cockcms.cms.action.member.UeditorAct"/>
+    <bean id="registerAct" class="com.cockroach.cockcms.cms.action.member.RegisterAct"/>
+    <bean id="forgotPasswordAct" class="com.cockroach.cockcms.cms.action.member.ForgotPasswordAct"/>
+    <bean id="imageCutAct" class="com.cockroach.cockcms.cms.action.member.ImageCutAct"/>
+    <bean id="imageUploadAct" class="com.cockroach.cockcms.cms.action.member.ImageUploadAct"/>
+    <bean id="commentMemberAct" class="com.cockroach.cockcms.cms.action.member.CommentMemberAct"/>
+    <bean id="guestbookMemberAct" class="com.cockroach.cockcms.cms.action.member.GuestbookMemberAct"/>
+    <bean id="collectionMemberAct" class="com.cockroach.cockcms.cms.action.member.CollectionMemberAct"/>
+    <bean id="messageAct" class="com.cockroach.cockcms.cms.action.member.MessageAct"/>
+
+    <bean id="siteFlowAct" class="com.cockroach.cockcms.cms.action.front.CmsSiteFlowAct"/>
+    <bean id="resumeAct" class="com.cockroach.cockcms.cms.action.member.ResumeAct"/>
+    <bean id="swfUploadAct" class="com.cockroach.cockcms.cms.action.member.SwfUploadAct"/>
+    <bean id="contentScoreAct" class="com.cockroach.cockcms.cms.action.front.ContentScoreAct"/>
+    <bean id="thirdLoginAct" class="com.cockroach.cockcms.cms.action.front.ThirdLoginAct"/>
+
+</beans>
