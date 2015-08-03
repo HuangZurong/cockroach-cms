@@ -1,8 +1,9 @@
-
 .idea/*
-
 target/*
-
 *.xml
-
 *.iml
+.class
+.classpath
+.project
+.DS_Store
+.settings/
