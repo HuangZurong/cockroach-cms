@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cockroach.cockcms.cms.entity.main">
+
+    <class name="BookInfoEntity" table="book_info">
+        <id name="id" column="id"/>
+        <property name="bookId" column="book_id"/>
+        <property name="mainName" column="main_name"/>
+        <property name="subName" column="sub_name"/>
+        <property name="publicationDate" column="publication_date"/>
+        <property name="isbn" column="ISBN"/>
+        <property name="version" column="version"/>
+        <property name="language" column="language"/>
+        <property name="region" column="region"/>
+        <property name="smallPic" column="small_pic"/>
+        <property name="bigPic" column="big_pic"/>
+        <property name="illustrations" column="illustrations"/>
+        <property name="introduction" column="introduction"/>
+        <property name="catalog" column="catalog"/>
+        <property name="pages" column="pages"/>
+        <property name="wordCount" column="word_count"/>
+        <property name="weight" column="weight"/>
+        <property name="price" column="price"/>
+        <property name="printingMethod" column="printing_method"/>
+        <property name="printingCount" column="printing_count"/>
+        <property name="binding" column="binding"/>
+        <property name="format" column="format"/>
+        <property name="medium" column="medium"/>
+        <property name="ebook" column="ebook"/>
+        <property name="recommendLevel" column="recommend_level"/>
+        <property name="series" column="series"/>
+        <property name="category" column="category"/>
+        <property name="keywords" column="keywords"/>
+        <property name="gmtCreate" column="gmt_create"/>
+        <property name="createUserId" column="create_user_id"/>
+        <property name="gmtModify" column="gmt_modify"/>
+        <property name="modifyUserId" column="modify_user_id"/>
+    </class>
+</hibernate-mapping>

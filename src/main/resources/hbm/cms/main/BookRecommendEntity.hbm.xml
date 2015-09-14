@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cockroach.cockcms.cms.entity.main">
+
+    <class name="BookRecommendEntity" table="book_recommend">
+        <id name="id" column="id"/>
+        <property name="userId" column="user_id"/>
+        <property name="bookId" column="book_id"/>
+        <property name="gmtCreate" column="gmt_create"/>
+        <property name="createUserId" column="create_user_id"/>
+        <property name="gmtModify" column="gmt_modify"/>
+        <property name="modifyUserId" column="modify_user_id"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cockroach.cockcms.cms.entity.main">
+    <class name="BookAuthorEntity" table="book_author">
+        <id name="id" column="id"/>
+        <property name="name" column="name"/>
+        <property name="nationality" column="nationality"/>
+        <property name="introduce" column="introduce"/>
+        <property name="areasOfExpertise" column="areas_of_expertise"/>
+        <property name="gmtCreate" column="gmt_create"/>
+        <property name="createUserId" column="create_user_id"/>
+        <property name="gmtModify" column="gmt_modify"/>
+        <property name="modifyUserId" column="modify_user_id"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.cockroach.cockcms.cms.entity.main">
+    <class name="BookCategoryEntity" table="book_category">
+        <id name="cid" column="cid"/>
+        <property name="parentCid" column="parent_cid"/>
+        <property name="name" column="name"/>
+        <property name="isParent" column="is_parent"/>
+        <property name="isLeaf" column="is_leaf"/>
+        <property name="level" column="level"/>
+        <property name="sortOrder" column="sort_order"/>
+        <property name="module" column="module"/>
+        <property name="status" column="status"/>
+        <property name="visibility" column="visibility"/>
+        <property name="gmtCreate" column="gmt_create"/>
+        <property name="createUserId" column="create_user_id"/>
+        <property name="gmtModify" column="gmt_modify"/>
+        <property name="modifyUserId" column="modify_user_id"/>
+    </class>
+</hibernate-mapping>

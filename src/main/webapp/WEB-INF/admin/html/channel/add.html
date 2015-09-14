@@ -28,11 +28,11 @@ $(function() {
 			}
 		}
 	});
-	
+
 	$('#openModelTplDialog').click(function(){
 		$('#modelTplDialog').dialog('open');
 		return false;
-	});	
+	});
 });
 function appendModelTpl(modelId,tpl){
 	var hasContain = false;
@@ -176,7 +176,7 @@ function appendModelTpl(modelId,tpl){
 <input onchange="$('#uploadFileText1').val(this.value)" size="14" type="file" id="uploadFile1" class="file-button"/>
 </span>
 <label><input type="checkbox" onclick="$('#mark1').val(this.checked);"/><@s.m "imageupload.mark"/></label><input type="hidden" id="mark1" value="false"/> <input type="button" value="<@s.m "imageupload.upload"/>" onclick="upload(1);" class="upload-button"/><br/>
-<@s.m "global.width"/>: <input type="text" id="zoomWidth1" value="${model.titleImgWidth}" size="5"/> <@s.m "global.height"/>: <input type="text" id="zoomHeight1" value="${model.titleImgHeight}" size="5"/> <input type="button" value="<@s.m "imageupload.cut"/>" onclick="imgCut(1);" class="cut-button"/> 
+<@s.m "global.width"/>: <input type="text" id="zoomWidth1" value="${model.titleImgWidth}" size="5"/> <@s.m "global.height"/>: <input type="text" id="zoomHeight1" value="${model.titleImgHeight}" size="5"/> <input type="button" value="<@s.m "imageupload.cut"/>" onclick="imgCut(1);" class="cut-button"/>
 </@p.td><@p.td colspan="1" width="50">
 <img id="preImg1" alt="<@s.m "imageupload.preview"/>" style="width:100px;height:70px;background-color:#CCCCCC;border:1px solid #333"/>
 </@p.td><@p.tr/>
@@ -190,7 +190,7 @@ function appendModelTpl(modelId,tpl){
 <input onchange="$('#uploadFileText2').val(this.value)" size="14" type="file" id="uploadFile2" class="file-button"/>
 </span>
 <label><input type="checkbox" onclick="$('#mark2').val(this.checked);"/><@s.m "imageupload.mark"/></label><input type="hidden" id="mark2" value="false"/> <input type="button" value="<@s.m "imageupload.upload"/>" onclick="upload(2);" class="upload-button"/><br/>
-<@s.m "global.width"/>: <input type="text" id="zoomWidth2" value="${model.contentImgWidth}" size="5"/> <@s.m "global.height"/>: <input type="text" id="zoomHeight2" value="${model.contentImgWidth}" size="5"/> <input type="button" value="<@s.m "imageupload.cut"/>" onclick="imgCut(2);" class="cut-button"/> 
+<@s.m "global.width"/>: <input type="text" id="zoomWidth2" value="${model.contentImgWidth}" size="5"/> <@s.m "global.height"/>: <input type="text" id="zoomHeight2" value="${model.contentImgWidth}" size="5"/> <input type="button" value="<@s.m "imageupload.cut"/>" onclick="imgCut(2);" class="cut-button"/>
 </@p.td><@p.td colspan="1" width="50">
 <img id="preImg2" alt="<@s.m "imageupload.preview"/>" style="width:100px;height:70px;background-color:#CCCCCC;border:1px solid #333"/>
 </@p.td><@p.tr/>
