@@ -315,7 +315,13 @@ function submitContent(){
 <#include "/common/html/image_upload.html"/>
 <#include "attachment_upload.html"/>
 <#include "media_upload.html"/>
-<@p.form id="jvForm" action="o_save.do" labelWidth="10">
+	<@p.form id="jvForm" action="
+	<#if !model.submitUrl??>
+		model.submitUrl
+		<#else>
+		o_save.do
+	</#if>
+	" labelWidth="10">
 
 <#assign count=0/>
 <#list itemList as item>
@@ -627,7 +633,8 @@ function addPicLine() {
 	<input type="hidden" name="cid" value="${cid!}"/>
 	<input type="hidden" name="modelId" value="${model.id!}"/>
 	<input type="hidden" name="model.id" value="${model.id!}"/>
-	<@p.submit code="global.submit" onclick="return submitContent()"/> &nbsp; <@p.reset code="global.reset"/>
+	<@p.submit code="global.submit" onclick="return submitContent()"/> &nbsp; ${model.submitUrl!}<@p.reset
+	code="global.reset"/>
 </@p.td>
 </@p.form>
 </div>

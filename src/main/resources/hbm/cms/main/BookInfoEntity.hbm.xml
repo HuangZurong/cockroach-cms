@@ -3,6 +3,8 @@
 <hibernate-mapping package="com.cockroach.cockcms.cms.entity.main">
 
     <class name="BookInfoEntity" table="book_info">
+        <meta attribute="sync-DAO">false</meta>
+        <cache usage="read-write"/>
         <id name="id" column="id"/>
         <property name="bookId" column="book_id"/>
         <property name="mainName" column="main_name"/>

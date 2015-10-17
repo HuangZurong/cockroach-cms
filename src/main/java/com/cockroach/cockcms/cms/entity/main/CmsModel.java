@@ -1,19 +1,15 @@
 package com.cockroach.cockcms.cms.entity.main;
 
-import static com.cockroach.cockcms.cms.Constants.TPLDIR_ALONE;
-import static com.cockroach.cockcms.cms.Constants.TPLDIR_CHANNEL;
-import static com.cockroach.cockcms.cms.Constants.TPLDIR_CONTENT;
-import static com.cockroach.cockcms.cms.Constants.TPL_SUFFIX;
-import static com.cockroach.cockcms.common.web.Constants.DEFAULT;
+import com.cockroach.cockcms.cms.entity.main.base.BaseCmsModel;
+import org.apache.commons.lang.StringUtils;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import org.apache.commons.lang.StringUtils;
-
-import com.cockroach.cockcms.cms.entity.main.base.BaseCmsModel;
+import static com.cockroach.cockcms.cms.Constants.*;
+import static com.cockroach.cockcms.common.web.Constants.DEFAULT;
 
 public class CmsModel extends BaseCmsModel {
 	private static final long serialVersionUID = 1L;
@@ -105,10 +101,10 @@ public class CmsModel extends BaseCmsModel {
 			Integer contentImgWidth,
 			Integer contentImgHeight, Integer priority,
 			Boolean hasContent, Boolean disabled,
-			Boolean def) {
+			Boolean def, String submitUrl) {
 
 		super(id, name, path, titleImgWidth, titleImgHeight, contentImgWidth,
-				contentImgHeight, priority, hasContent, disabled, def);
+				contentImgHeight, priority, hasContent, disabled, def, submitUrl);
 	}
 
 	/* [CONSTRUCTOR MARKER END] */

@@ -12,8 +12,8 @@
     </properties>
 
     <groupId>com.cockroach</groupId>
-    <artifactId>${project.name}</artifactId>
-    <name>${project.name}</name>
+    <artifactId>cockroach</artifactId>
+    <name>cockroach</name>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 

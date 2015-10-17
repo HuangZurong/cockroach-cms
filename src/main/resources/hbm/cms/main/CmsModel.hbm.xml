@@ -17,6 +17,7 @@
 		<property name="hasContent" column="has_content" type="java.lang.Boolean" not-null="true"/>
 		<property name="disabled" column="is_disabled" type="java.lang.Boolean" not-null="true"/>
 		<property name="def" column="is_def" type="java.lang.Boolean" not-null="true"/>
+		<property name="submitUrl" column="submit_url" type="string" not-null="false" length="200"/>
 		<set name="items" inverse="true" cascade="all-delete-orphan">
 			<key column="model_id"/>
 			<one-to-many class="CmsModelItem"/>
